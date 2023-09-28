@@ -1,0 +1,30 @@
+{
+    "name": "devOps-Change-custom-action",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "description": "A Github Action to pause/resume workflow run for a ServiceNow change approval.",
+    "private": false,
+    "scripts": {
+        "build": "ncc build src/main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:ServiceNow/DevOps-Change-custom-action.git"
+    },
+    "keywords": [
+        "devops",
+        "servicenow",
+        "change"
+    ],
+    "author": "ServiceNow",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ServiceNow/DevOps-Change-custom-action/issues"
+    },
+    "homepage": "https://github.com/ServiceNow/DevOps-Change-custom-action#readme",
+    "dependencies": {
+        "@actions/core": "^1.8.2",
+        "axios": "^0.24.0",
+        "follow-redirects": "^1.15.2"
+    }
+}
