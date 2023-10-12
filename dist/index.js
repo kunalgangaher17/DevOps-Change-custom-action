@@ -5699,6 +5699,7 @@ const main = async() => {
 
       let abortOnChangeStepTimeout = core.getInput('abortOnChangeStepTimeout');
       abortOnChangeStepTimeout = abortOnChangeStepTimeout === undefined || abortOnChangeStepTimeout === "" ? false : (abortOnChangeStepTimeout == "true");
+      console.log("abortOnChangeStepTimeout value :"+abortOnChangeStepTimeout);
 
       let start = +new Date();
       let prevPollChangeDetails = {};
