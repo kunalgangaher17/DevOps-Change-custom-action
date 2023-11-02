@@ -62,7 +62,7 @@ jobs:
           sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
 
       - name: ServiceNow DevOps Unit Test Results
-        uses: kunalgangaher17/DevOps-Custom-test-report@main
+        uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
