@@ -70,7 +70,7 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'Build'
-          xml-report-filename: /testng.xml
+          xml-report-filename: testng.xml
 
       - name: ServiceNow DevOps Security Results
         uses: kunalgangaher17/DevOps-Custom-security-result@main
