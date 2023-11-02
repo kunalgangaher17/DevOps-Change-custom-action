@@ -24,7 +24,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
             - name: ServiceNow DevOps Unit Test Results
-              uses: ServiceNow/servicenow-devops-test-report@main
+              uses: ServiceNow/servicenow-devops-test-report@scratch/STRY56331515
               with:
                   devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
                   devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
