@@ -34,7 +34,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
             - name: ServiceNow DevOps Unit Test Results
-              uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
+              uses: kunal-gangaher-snow/servicenow-devops-test-report@scratch/STRY56331515_1
               with:
                   devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
                   devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -70,7 +70,7 @@ jobs:
       #     abortOnChangeStepTimeout: true
       
       - name: ServiceNow DevOps Sonar Scan Results
-        uses: kunalgangaher17/DevOps-Custom-sonar@main
+        uses: kunal-gangaher-snow/servicenow-devops-sonar@scratch/STRY56331515
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -93,7 +93,7 @@ jobs:
       #     xml-report-filename: testng.xml
 
       - name: ServiceNow DevOps Security Results
-        uses: kunalgangaher17/DevOps-Custom-security-result@main
+        uses: kunal-gangaher-snow/servicenow-devops-security-result@scratch/STRY56331515
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -124,7 +124,7 @@ jobs:
       #     change-details: '{"build_number":"21","pipeline_name":"CI_Pipeline","stage_name":"Create_Change"}'
 
       - name: ServiceNow Register Package
-        uses: kunalgangaher17/DevOps-Custom-Register-Package@main
+        uses: kunal-gangaher-snow/servicenow-devops-register-package@scratch/STRY56331515
         with:
           devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
@@ -135,7 +135,7 @@ jobs:
           package-name: 'registerpackage.war'
 
       - name: ServiceNow Register Artifact
-        uses: kunalgangaher17/DevOps-custom-action-register-artifact@main
+        uses: kunal-gangaher-snow/servicenow-devops-register-artifact@scratch/STRY56331515
         with:
           devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
