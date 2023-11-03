@@ -48,7 +48,7 @@ jobs:
                   xml-report-filename: testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml
                   
   changeApproval:
-    name: ServiceNow Change Approval
+    name: GitHub Actions
     # needs: build
     runs-on: ubuntu-latest
 
