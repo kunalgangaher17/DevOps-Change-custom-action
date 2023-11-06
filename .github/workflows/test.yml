@@ -138,8 +138,8 @@ jobs:
         uses: ServiceNow/servicenow-devops-register-artifact@Scratch/STRY56331515
         with:
           #devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-          devops-integration-user-name: devops.integration.user
-          devops-integration-user-password: U)R]40@6W9A.XaN._tTT2+X7l!.iH9%-wu1!--uIfSgC>aJI+u(WzW8#-i0i-CBZ!X+c-5N!sK>}E+v6tz2<KXg[}xT*L#?PW+;#          
+          devops-integration-user-name: 'devops.integration.user'
+          devops-integration-user-password: 'U)R]40@6W9A.XaN._tTT2+X7l!.iH9%-wu1!--uIfSgC>aJI+u(WzW8#-i0i-CBZ!X+c-5N!sK>}E+v6tz2<KXg[}xT*L#?PW+;#'
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
