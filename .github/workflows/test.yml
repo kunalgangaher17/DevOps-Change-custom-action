@@ -69,18 +69,18 @@ jobs:
       #     abortOnChangeCreationFailure: true
       #     abortOnChangeStepTimeout: true
       
-      - name: ServiceNow DevOps Sonar Scan Results
-        uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331515_1
-        with:
-      #    devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-          instance-url: ${{ secrets.SN_INSTANCE_URL }}
-          tool-id: ${{ secrets.SN_SONAR_TOOL_ID }}
-          context-github: ${{ toJSON(github) }}
-          job-name: 'Build'
-          sonar-host-url: ${{ secrets.SONAR_URL }}
-          sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
+      # - name: ServiceNow DevOps Sonar Scan Results
+      #   uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331515_1
+      #   with:
+      # #    devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+      #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+      #     devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
+      #     tool-id: ${{ secrets.SN_SONAR_TOOL_ID }}
+      #     context-github: ${{ toJSON(github) }}
+      #     job-name: 'Build'
+      #     sonar-host-url: ${{ secrets.SONAR_URL }}
+      #     sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
 
       # - name: ServiceNow DevOps Unit Test Results
       #   uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
@@ -138,17 +138,17 @@ jobs:
       #     artifacts: '[{"name": "com:customactiondemo","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
       #     package-name: 'registerpackage.war'
 
-      # - name: ServiceNow Register Artifact
-      #   uses: ServiceNow/servicenow-devops-register-artifact@scratch/STRY56331515
-      #   with:
-      #     #devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-      #     devops-integration-user-name: 'devops.integration.user'
-      #     devops-integration-user-password: 'U)R]40@6W9A.XaN._tTT2+X7l!.iH9%-wu1!--uIfSgC>aJI+u(WzW8#-i0i-CBZ!X+c-5N!sK>}E+v6tz2<KXg[}xT*L#?PW+;#'
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     job-name: 'Register Artifact'
-      #     artifacts: '[{"name": "com:customactiondemo","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
+      - name: ServiceNow Register Artifact
+        uses: ServiceNow/servicenow-devops-register-artifact@scratch/STRY56331515
+        with:
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+          devops-integration-user-name: 'devops.integration.user'
+          devops-integration-user-password: 'U)R]40@6W9A.XaN._tTT2+X7l!.iH9%-wu1!--uIfSgC>aJI+u(WzW8#-i0i-CBZ!X+c-5N!sK>}E+v6tz2<KXg[}xT*L#?PW+;#'
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Register Artifact'
+          artifacts: '[{"name": "com:customactiondemo","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
           
   deploy:
     name: Deploy
