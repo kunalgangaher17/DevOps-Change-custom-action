@@ -70,7 +70,7 @@ jobs:
       #     abortOnChangeStepTimeout: true
       
       - name: ServiceNow DevOps Sonar Scan Results
-        uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331515
+        uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331515_1
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
