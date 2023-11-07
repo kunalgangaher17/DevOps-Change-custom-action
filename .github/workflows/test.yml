@@ -34,7 +34,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
             - name: ServiceNow DevOps Unit Test Results
-              uses: ServiceNow/servicenow-devops-test-report@scratch/STRY56331515_1
+              uses: ServiceNow/servicenow-devops-test-report@scratch/STRY56331515_2
               with:
                   devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
                   devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -92,17 +92,17 @@ jobs:
       #     job-name: 'Build'
       #     xml-report-filename: testng.xml
 
-      - name: ServiceNow DevOps Security Results
-        uses: ServiceNow/servicenow-devops-security-result@scratch/STRY56331515
-        with:
-          devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-          #devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-          #devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-          instance-url: ${{ secrets.SN_INSTANCE_URL }}
-          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-          context-github: ${{ toJSON(github) }}
-          job-name: 'Deploy'
-          security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
+      # - name: ServiceNow DevOps Security Results
+      #   uses: ServiceNow/servicenow-devops-security-result@scratch/STRY56331515
+      #   with:
+      #     devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+      #     #devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+      #     #devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
+      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+      #     context-github: ${{ toJSON(github) }}
+      #     job-name: 'Deploy'
+      #     security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
 
       # - name: ServiceNow Update Change
       #   uses: kunalgangaher17/DevOps-Custom-update-change@main
