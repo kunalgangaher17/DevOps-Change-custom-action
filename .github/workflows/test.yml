@@ -69,74 +69,74 @@ jobs:
       #     abortOnChangeCreationFailure: true
       #     abortOnChangeStepTimeout: true
       
-      # - name: ServiceNow DevOps Sonar Scan Results
-      #   uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331515_1
-      #   with:
-      # #    devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-      #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-      #     devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_SONAR_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     job-name: 'Build'
-      #     sonar-host-url: ${{ secrets.SONAR_URL }}
-      #     sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
+      - name: ServiceNow DevOps Sonar Scan Results
+        uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331515_1
+        with:
+          devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+          # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_SONAR_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Build'
+          sonar-host-url: ${{ secrets.SONAR_URL }}
+          sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
 
-      # - name: ServiceNow DevOps Unit Test Results
-      #   uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
-      #   with:
-      #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-      #     devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     job-name: 'Build'
-      #     xml-report-filename: testng.xml
+      - name: ServiceNow DevOps Unit Test Results
+        uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
+        with:
+          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Build'
+          xml-report-filename: testng.xml
 
-      # - name: ServiceNow DevOps Security Results
-      #   uses: ServiceNow/servicenow-devops-security-result@scratch/STRY56331515
-      #   with:
-      #     devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-      #     #devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-      #     #devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     job-name: 'Deploy'
-      #     security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
+      - name: ServiceNow DevOps Security Results
+        uses: ServiceNow/servicenow-devops-security-result@scratch/STRY56331515
+        with:
+          devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+          #devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          #devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Deploy'
+          security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
 
-      # - name: ServiceNow Update Change
-      #   uses: kunalgangaher17/DevOps-Custom-update-change@main
-      #   with:
-      #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-      #     devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     context-github: ${{ toJSON(github) }}
-      #     change-request-number: 'CHG123456'
-      #     change-request-details: '{"short_description":"Automated Software Deployment","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}'
+      - name: ServiceNow Update Change
+        uses: kunalgangaher17/DevOps-Custom-update-change@main
+        with:
+          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          context-github: ${{ toJSON(github) }}
+          change-request-number: 'CHG123456'
+          change-request-details: '{"short_description":"Automated Software Deployment","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}'
           
-      # - name: ServiceNow Get Change
-      #   uses: kunalgangaher17/DevOps-Custom-Get-Change@main
-      #   with:
-      #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-      #     devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     change-details: '{"build_number":"21","pipeline_name":"CI_Pipeline","stage_name":"Create_Change"}'
+      - name: ServiceNow Get Change
+        uses: kunalgangaher17/DevOps-Custom-Get-Change@main
+        with:
+          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          change-details: '{"build_number":"21","pipeline_name":"CI_Pipeline","stage_name":"Create_Change"}'
 
-      # - name: ServiceNow Register Package
-      #   uses: ServiceNow/servicenow-devops-register-package@scratch/STRY56331515
-      #   with:
-      #     devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
-      #     #devops-integration-user-name: 'devops.integration.user'
-      #     #devops-integration-user-password: 'U)R]40@6W9A.XaN._tTT2+X7l!.iH9%-wu1!--uIfSgC>aJI+u(WzW8#-i0i-CBZ!X+c-5N!sK>}E+v6tz2<KXg[}xT*L#?PW+;#'
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     job-name: 'Register Package'
-      #     artifacts: '[{"name": "com:customactiondemo","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
-      #     package-name: 'registerpackage.war'
+      - name: ServiceNow Register Package
+        uses: ServiceNow/servicenow-devops-register-package@scratch/STRY56331515
+        with:
+          devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+          #devops-integration-user-name: 'devops.integration.user'
+          #devops-integration-user-password: 'U)R]40@6W9A.XaN._tTT2+X7l!.iH9%-wu1!--uIfSgC>aJI+u(WzW8#-i0i-CBZ!X+c-5N!sK>}E+v6tz2<KXg[}xT*L#?PW+;#'
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Register Package'
+          artifacts: '[{"name": "com:customactiondemo","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
+          package-name: 'registerpackage.war'
 
       - name: ServiceNow Register Artifact
         uses: ServiceNow/servicenow-devops-register-artifact@scratch/STRY56331536
