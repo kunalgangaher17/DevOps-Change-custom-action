@@ -106,7 +106,7 @@ jobs:
           security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
 
       - name: ServiceNow Update Change
-        uses: kunalgangaher17/DevOps-Custom-update-change@scratch/STRY56331536
+        uses: ServiceNow/servicenow-devops-update-change@scratch/STRY56331536
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -116,7 +116,7 @@ jobs:
           change-request-details: '{"short_description":"Automated Software Deployment","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}'
           
       - name: ServiceNow Get Change
-        uses: kunalgangaher17/DevOps-Custom-Get-Change@scratch/STRY56331536
+        uses: ServiceNow/servicenow-devops-get-change@scratch/STRY56331536
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
