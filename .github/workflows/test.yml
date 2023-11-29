@@ -109,9 +109,9 @@ jobs:
       - name: ServiceNow Get Change
         uses: ServiceNow/servicenow-devops-get-change@scratch/DEF0468024
         with:
-          # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-          # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-          devops-integration-token: "rz2lzbaPzZoBJ2vSZmyxjJEubjvhHYsm"
+          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          # devops-integration-token: "rz2lzbaPzZoBJ2vSZmyxjJEubjvhHYsm"
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
