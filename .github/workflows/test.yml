@@ -107,7 +107,7 @@ jobs:
       #     security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
 
       - name: ServiceNow Get Change
-        uses: ServiceNow/servicenow-devops-get-change@main
+        uses: ServiceNow/servicenow-devops-get-change@scratch/DEF0468024
         with:
           # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
