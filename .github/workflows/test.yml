@@ -115,7 +115,7 @@ jobs:
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
-          change-details: '{"build_number":"","pipeline_name":"","stage_name":"ServiceNow Change Approval"}'
+          change-details: '{"build_number":"","pipeline_name":"DevOps-Change-custom-action","stage_name":"ServiceNow Change Approval"}'
 
       - name: ServiceNow Update Change
         uses: ServiceNow/servicenow-devops-update-change@scratch/DEF0468024
