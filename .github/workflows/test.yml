@@ -34,7 +34,7 @@ jobs:
   #           - name: Checkout repository
   #             uses: actions/checkout@v2
   #           - name: ServiceNow DevOps Unit Test Results
-  #             uses: ServiceNow/servicenow-devops-test-report@scratch/STRY56331515_2
+  #             uses: ServiceNow/servicenow-devops-test-report@scratch/DEF0468024
   #             with:
   #                 devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
   #                 devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -54,7 +54,7 @@ jobs:
 
     steps:     
       - name: ServiceNow Change Approval
-        uses: ServiceNow/servicenow-devops-change@scratch/STRY56331536_2
+        uses: ServiceNow/servicenow-devops-change@scratch/DEF0468024
         with:
           # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -71,7 +71,7 @@ jobs:
           abortOnChangeStepTimeout: true
       
       # - name: ServiceNow DevOps Sonar Scan Results
-      #   uses: ServiceNow/servicenow-devops-sonar@scratch/STRY56331536
+      #   uses: ServiceNow/servicenow-devops-sonar@scratch/DEF0468024
       #   with:
       #     # devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
       #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
@@ -84,7 +84,7 @@ jobs:
       #     sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
 
       # - name: ServiceNow DevOps Unit Test Results
-      #   uses: ServiceNow/servicenow-devops-test-report@scratch/STRY56331536
+      #   uses: ServiceNow/servicenow-devops-test-report@scratch/DEF0468024
       #   with:
       #     devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
       #     devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -95,7 +95,7 @@ jobs:
       #     xml-report-filename: testng.xml
 
       - name: ServiceNow DevOps Security Results
-        uses: ServiceNow/servicenow-devops-security-result@scratch/STRY56331536
+        uses: ServiceNow/servicenow-devops-security-result@scratch/DEF0468024
         with:
           devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
           #devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
@@ -107,7 +107,7 @@ jobs:
           security-result-attributes:  '{"scanner":"Veracode","applicationName":"azure","buildVersion":"jenkins-Veracode with Step-27"}'
 
       - name: ServiceNow Update Change
-        uses: ServiceNow/servicenow-devops-update-change@scratch/STRY56331536
+        uses: ServiceNow/servicenow-devops-update-change@scratch/DEF0468024
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
