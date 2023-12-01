@@ -53,22 +53,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:     
-      # - name: ServiceNow Change Approval
-      #   uses: ServiceNow/servicenow-devops-change@scratch/DEF0468024
-      #   with:
-      #     # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-      #     # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-      #     devops-integration-token: "rz2lzbaPzZoBJ2vSZmyxjJEubjvhHYsm"
-      #     instance-url: ${{ secrets.SN_INSTANCE_URL }}
-      #     tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-      #     context-github: ${{ toJSON(github) }}
-      #     job-name: 'GitHub Actions'
-      #     change-request: '{"setCloseCode":"true","attributes":{"short_description":"Automated Software Deployment 123","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}}'
-      #     interval: '2'
-      #     timeout: '360'
-      #     changeCreationTimeOut: '360'
-      #     abortOnChangeCreationFailure: true
-      #     abortOnChangeStepTimeout: true
+      - name: ServiceNow Change Approval
+        uses: ServiceNow/servicenow-devops-change@scratch/DEF0468024
+        with:
+          # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          devops-integration-token: "rz2lzbaPzZoBJ2vSZmyxjJEubjvhHYsm"
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'GitHub Actions'
+          change-request: '{"setCloseCode":"true","attributes":{"short_description":"Automated Software Deployment 123","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}}'
+          interval: '2'
+          timeout: '360'
+          changeCreationTimeOut: '360'
+          abortOnChangeCreationFailure: true
+          abortOnChangeStepTimeout: true
       
       # - name: ServiceNow DevOps Sonar Scan Results
       #   uses: ServiceNow/servicenow-devops-sonar@scratch/DEF0468024
